@@ -23,10 +23,16 @@ jobs:
           distribution: 'temurin'
 
       # 3️⃣ Install Microsoft Edge browser
-      - name: Install Microsoft Edge
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y gnupg curl unzip
+
+      - name: Add Microsoft Edge repo and install
         run: |
-          sudo apt update
-          sudo apt install -y microsoft-edge-stable
+          curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+          sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+          sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge.list'
+          sudo apt-get update
+          sudo apt-get install -y microsoft-edge-stable
 
       # 4️⃣ Set CI environment variable for DriverFactory
       - name: Set CI environment variable
