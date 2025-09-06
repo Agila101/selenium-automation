@@ -20,7 +20,13 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Install Microsoft Edge
+        run: |
+          wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_116.0.1938.81-1_amd64.deb
+          sudo dpkg -i microsoft-edge-stable_116.0.1938.81-1_amd64.deb || sudo apt-get -f install -y
+
+      - name: Set CI environment variable
+        run: echo "CI=true" >> $GITHUB_ENV
+
       - name: Build and run tests with Maven
         run: mvn clean test
-
-
