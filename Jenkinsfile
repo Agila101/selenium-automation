@@ -2,43 +2,70 @@ pipeline {
     agent any
 
     environment {
-        JAVA_HOME = "/usr/lib/jvm/java-17-openjdk" // Adjust if needed
-        PATH = "$JAVA_HOME/bin:$PATH"
+        CI = "true" // BaseTest checks this to run headless browsers in Jenkins
+        MAVEN_HOME = tool name: 'Maven', type: 'maven' // make sure Maven is configured in Jenkins
+        JAVA_HOME = tool name: 'JDK 21', type: 'jdk' // make sure JDK is configured in Jenkins
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/yourusername/your-repo.git'
+                git branch: 'main', url: 'https://github.com/Agila101/selenium-automation.git'
             }
         }
 
         stage('Build') {
             steps {
-                sh './mvnw clean compile' // or 'mvn clean compile' if you don't have mvnw
+                withEnv(["PATH+MAVEN=${MAVEN_HOME}/bin", "JAVA_HOME=${JAVA_HOME}"]) {
+                    sh 'mvn clean compile'
+                }
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh './mvnw test -Denv=qa -Dsurefire.suiteXmlFiles=testng.xml'
+                withEnv(["PATH+MAVEN=${MAVEN_HOME}/bin", "JAVA_HOME=${JAVA_HOME}"]) {
+                    sh 'mvn test'
+                }
+            }
+            post {
+                always {
+                    junit '**/target/surefire-reports/*.xml'
+                    publishHTML(target: [
+                        reportDir: 'ExtentReports',
+                        reportFiles: 'ExtentReport.html',
+                        reportName: 'Extent Test Report'
+                    ])
+                }
             }
         }
 
-        stage('Publish Reports') {
+        stage('Build JAR') {
             steps {
-                publishHTML(target: [
-                    reportDir: 'ExtentReports',
-                    reportFiles: 'ExtentReport.html',
-                    reportName: 'Extent Report'
-                ])
+                withEnv(["PATH+MAVEN=${MAVEN_HOME}/bin", "JAVA_HOME=${JAVA_HOME}"]) {
+                    sh 'mvn package'
+                }
+            }
+        }
+
+        stage('Send Email') {
+            steps {
+                mail bcc: '', body: "Build ${env.BUILD_NUMBER} completed.\nCheck reports: ${env.BUILD_URL}",
+                    from: 'jenkins@yourdomain.com',
+                    replyTo: 'jenkins@yourdomain.com',
+                    subject: "Build ${env.BUILD_NUMBER} Status",
+                    to: 'agila.sri21@gmail.com'
             }
         }
     }
 
     post {
-        always {
-            junit '**/target/surefire-reports/*.xml'
+        failure {
+            mail bcc: '', body: "Build ${env.BUILD_NUMBER} failed.\nCheck logs: ${env.BUILD_URL}",
+                from: 'jenkins@yourdomain.com',
+                replyTo: 'jenkins@yourdomain.com',
+                subject: "Build ${env.BUILD_NUMBER} Failed",
+                to: 'agila.sri21@gmail.com'
         }
     }
 }
