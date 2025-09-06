@@ -22,7 +22,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      # 3️⃣ Install Microsoft Edge
+      # 3️⃣ Install Microsoft Edge browser
       - name: Install Microsoft Edge
         run: |
           curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -31,7 +31,16 @@ jobs:
           sudo apt update
           sudo apt install -y microsoft-edge-stable
 
-      # 4️⃣ Set CI environment variable for your DriverFactory
+      # 3.1️⃣ Install EdgeDriver manually
+      - name: Install EdgeDriver
+        run: |
+          EDGE_VERSION=$(microsoft-edge --version | grep -oP '\d+\.\d+\.\d+\.\d+')
+          wget https://msedgedriver.azureedge.net/$EDGE_VERSION/edgedriver_linux64.zip
+          unzip edgedriver_linux64.zip
+          sudo mv msedgedriver /usr/local/bin/
+          sudo chmod +x /usr/local/bin/msedgedriver
+
+      # 4️⃣ Set CI environment variable for DriverFactory
       - name: Set CI environment variable
         run: echo "CI=true" >> $GITHUB_ENV
 
