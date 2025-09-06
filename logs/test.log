@@ -53,3 +53,42 @@
 2025-09-05 23:49:01 INFO  com.automationframework.tests.LoginTest - Testing login for user: performance_glitch_user | Expected: valid
 2025-09-05 23:49:06 INFO  com.automationframework.tests.LoginTest - Actual page title: Products
 2025-09-05 23:49:10 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-06 01:25:32 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-06 01:25:32 INFO  com.automationframework.tests.LoginTest - Testing login for user: locked_out_user | Expected: invalid
+2025-09-06 01:25:32 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-06 01:25:32 INFO  com.automationframework.tests.LoginTest - Testing login for user: locked_out_user | Expected: invalid
+2025-09-06 01:25:33 INFO  com.automationframework.tests.LoginTest - Error message displayed: Epic sadface: Sorry, this user has been locked out.
+2025-09-06 01:25:33 INFO  com.automationframework.tests.LoginTest - Error message displayed: Epic sadface: Sorry, this user has been locked out.
+2025-09-06 01:25:34 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-06 01:25:34 INFO  com.automationframework.tests.LoginTest - Testing login for user: locked_out_user | Expected: invalid
+2025-09-06 01:25:34 INFO  com.automationframework.tests.LoginTest - Error message displayed: Epic sadface: Sorry, this user has been locked out.
+2025-09-06 01:25:38 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-06 01:25:38 INFO  com.automationframework.tests.LoginTest - Testing login for user: wrong_user | Expected: invalid
+2025-09-06 01:25:38 INFO  com.automationframework.tests.LoginTest - Error message displayed: Epic sadface: Username and password do not match any user in this service
+2025-09-06 01:25:39 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-06 01:25:39 INFO  com.automationframework.tests.LoginTest - Testing login for user: wrong_user | Expected: invalid
+2025-09-06 01:25:40 INFO  com.automationframework.tests.LoginTest - Error message displayed: Epic sadface: Username and password do not match any user in this service
+2025-09-06 01:25:40 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-06 01:25:40 INFO  com.automationframework.tests.LoginTest - Testing login for user: wrong_user | Expected: invalid
+2025-09-06 01:25:40 INFO  com.automationframework.tests.LoginTest - Error message displayed: Epic sadface: Username and password do not match any user in this service
+2025-09-06 01:25:44 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-06 01:25:44 INFO  com.automationframework.tests.LoginTest - Testing login for user: standard_user | Expected: valid
+2025-09-06 01:25:45 INFO  com.automationframework.tests.LoginTest - Actual page title: Products
+2025-09-06 01:25:45 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-06 01:25:45 INFO  com.automationframework.tests.LoginTest - Testing login for user: standard_user | Expected: valid
+2025-09-06 01:25:46 INFO  com.automationframework.tests.LoginTest - Actual page title: Products
+2025-09-06 01:25:46 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-06 01:25:46 INFO  com.automationframework.tests.LoginTest - Testing login for user: standard_user | Expected: valid
+2025-09-06 01:25:47 INFO  com.automationframework.tests.LoginTest - Actual page title: Products
+2025-09-06 01:25:51 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-06 01:25:51 INFO  com.automationframework.tests.LoginTest - Testing login for user: performance_glitch_user | Expected: valid
+2025-09-06 01:25:53 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-06 01:25:53 INFO  com.automationframework.tests.LoginTest - Testing login for user: performance_glitch_user | Expected: valid
+2025-09-06 01:25:54 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-06 01:25:54 INFO  com.automationframework.tests.LoginTest - Testing login for user: performance_glitch_user | Expected: valid
+2025-09-06 01:25:57 INFO  com.automationframework.tests.LoginTest - Actual page title: Products
+2025-09-06 01:25:58 INFO  com.automationframework.tests.LoginTest - Actual page title: Products
+2025-09-06 01:25:59 INFO  com.automationframework.tests.LoginTest - Actual page title: Products
+2025-09-06 01:26:04 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-06 01:26:04 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-06 01:26:06 INFO  com.automationframework.tests.LoginTest - LoginPage initialized

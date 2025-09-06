@@ -40,6 +40,10 @@ public class BaseTest {
         if (environment != null) {
             ConfigReader.setEnv(environment); // switch environment
         }
+        boolean isCI = "true".equals(System.getenv("CI"));
+        if (isCI) {
+            System.out.println("Running in CI environment, using headless browser if applicable.");
+        }
         driver = DriverFactory.initDriver(browser);
         String baseUrl = ConfigReader.getProperty("baseUrl");
         driver.get(baseUrl);

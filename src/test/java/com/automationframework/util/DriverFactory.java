@@ -17,57 +17,57 @@ public class DriverFactory {
     public static WebDriver initDriver(String browser) {
         WebDriver webDriver;
 
+        boolean isCI = "true".equals(System.getenv("CI"));
         switch (browser.toLowerCase()) {
             case "chrome":
-                WebDriverManager.chromedriver().setup();
-                webDriver  = new ChromeDriver();
-                break;
 
-            case "chrome-headless":
-                WebDriverManager.chromedriver().setup();
+            WebDriverManager.chromedriver().setup();
+            if (isCI) {
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--headless=new");
                 chromeOptions.addArguments("--window-size=1920,1080");
                 webDriver = new ChromeDriver(chromeOptions);
-                break;
+            } else {
+                webDriver = new ChromeDriver();
+            }
+            break;
+
 
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
-                webDriver = new FirefoxDriver();
-                break;
-
-            case "firefox-headless":
-                WebDriverManager.firefoxdriver().setup();
-                FirefoxOptions firefoxOptions = new FirefoxOptions();
-                firefoxOptions.addArguments("--headless");
-                firefoxOptions.addArguments("--width=1920");
-                firefoxOptions.addArguments("--height=1080");
-                webDriver = new FirefoxDriver(firefoxOptions);
+                if (isCI) {
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
+                    firefoxOptions.addArguments("--headless");
+                    firefoxOptions.addArguments("--width=1920");
+                    firefoxOptions.addArguments("--height=1080");
+                    webDriver = new FirefoxDriver(firefoxOptions);
+                } else {
+                    webDriver = new FirefoxDriver();
+                }
                 break;
 
             case "edge":
+                // Use your custom Edge driver path
                 System.setProperty("webdriver.edge.driver", "/usr/local/bin/msedgedriver");
-                webDriver = new EdgeDriver();
-                break;
-
-            case "edge-headless":
-                System.setProperty("webdriver.edge.driver", "/usr/local/bin/msedgedriver");
-                EdgeOptions edgeOptions = new EdgeOptions();
-                edgeOptions.addArguments("--headless=new");
-                edgeOptions.addArguments("--window-size=1920,1080");
-                webDriver = new EdgeDriver(edgeOptions);
+                if (isCI) {
+                    EdgeOptions edgeOptions = new EdgeOptions();
+                    edgeOptions.addArguments("--headless=new");
+                    edgeOptions.addArguments("--window-size=1920,1080");
+                    webDriver = new EdgeDriver(edgeOptions);
+                } else {
+                    webDriver = new EdgeDriver();
+                }
                 break;
 
             default:
                 throw new IllegalArgumentException("Browser not supported: " + browser);
         }
-
         webDriver.manage().window().maximize();
         webDriver.manage().deleteAllCookies();
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         driver.set(webDriver);
-        System.out.println("Browser launched: " + browser);
+        System.out.println("Browser launched: " + browser + (isCI ? " (headless)" : ""));
         return getDriver();
     }
 
