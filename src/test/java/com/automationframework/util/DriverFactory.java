@@ -7,6 +7,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import java.nio.file.Paths;
 
 import java.time.Duration;
 
@@ -47,16 +48,16 @@ public class DriverFactory {
                 break;
 
             case "edge":
-                // Use your custom Edge driver path
-                System.setProperty("webdriver.edge.driver", "/usr/local/bin/msedgedriver");
+                // Use the driver from your project folder
+                String edgeDriverPath = Paths.get("drivers", "msedgedriver").toAbsolutePath().toString();
+                System.setProperty("webdriver.edge.driver", edgeDriverPath);
+
+                EdgeOptions edgeOptions = new EdgeOptions();
                 if (isCI) {
-                    EdgeOptions edgeOptions = new EdgeOptions();
                     edgeOptions.addArguments("--headless=new");
                     edgeOptions.addArguments("--window-size=1920,1080");
-                    webDriver = new EdgeDriver(edgeOptions);
-                } else {
-                    webDriver = new EdgeDriver();
                 }
+                webDriver = new EdgeDriver(edgeOptions);
                 break;
 
             default:

@@ -15,14 +15,7 @@
     </test>
 
     <!-- Chrome Tests -->
-    <test name="ChromeTests">
-        <parameter name="browser" value="chrome"/>
-        <parameter name="env" value="qa"/>
-        <classes>
-            <class name="com.automationframework.tests.LoginTest"/>
-            <class name="com.automationframework.tests.ProductPageTest"/>
-        </classes>
-    </test>
+
     <test name="EdgeTests">
         <parameter name="browser" value="edge"/>
         <parameter name="env" value="qa"/>
