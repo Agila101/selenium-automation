@@ -49,6 +49,10 @@ public class LoginPage {
     public void enterUsername(String username) {
         wait.until(ExpectedConditions.visibilityOf(usernameField)).sendKeys(username);
     }
+    public void open() {
+        String baseUrl = com.automationframework.util.ConfigReader.getUiProperty("baseUrl");
+        driver.get(baseUrl);
+    }
 
     public void enterPassword(String password) {
         wait.until(ExpectedConditions.visibilityOf(passwordField)).sendKeys(password);

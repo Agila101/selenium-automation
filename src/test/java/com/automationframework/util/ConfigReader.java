@@ -25,12 +25,11 @@ public class ConfigReader {
     }
 
     // Get property value for current environment
-    public static String getProperty(String key) {
-        String envKey = env + "." + key;
-
+    public static String getProperty(String type, String key) {
+        String envKey = type + "." + env + "." + key;  // include type
         String value = properties.getProperty(envKey);
         if (value != null) {
-            return value.split("#")[0].trim(); // removes inline comments and trims spaces
+            return value.split("#")[0].trim();
         } else {
             throw new RuntimeException("Property '" + envKey + "' not found in config.properties file.");
         }
@@ -40,6 +39,14 @@ public class ConfigReader {
     }
     public static void setEnv(String environment) {
         env = environment;
+    }
+    public static String getUiProperty(String key) {
+        return getProperty("ui", key);
+    }
+
+    /** Helper for API properties */
+    public static String getApiProperty(String key) {
+        return getProperty("api", key);
     }
 }
 

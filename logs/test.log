@@ -167,3 +167,82 @@
 2025-09-06 20:18:13 INFO  com.automationframework.tests.LoginTest - Testing login for user: performance_glitch_user | Expected: valid
 2025-09-06 20:18:19 INFO  com.automationframework.tests.LoginTest - Actual page title: Products
 2025-09-06 20:18:23 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-08 13:00:39 INFO  com.automationframework.tests.ui.ApiUiHybridTest - Product added to cart: 11
+2025-09-08 13:03:21 INFO  com.automationframework.tests.ui.ApiUiHybridTest - Product added to cart with cartId: 11
+2025-09-08 14:10:58 INFO  com.automationframework.tests.ui.ApiUiHybridTest - Creating API product to add to cart
+2025-09-08 14:11:00 INFO  com.automationframework.tests.ui.ApiUiHybridTest - Add product to cart with quantity 2
+2025-09-08 14:11:00 INFO  com.automationframework.tests.ui.ApiUiHybridTest - Cart Response: {"id":11,"userId":1,"date":"2025-09-08","products":[{"productId":21,"quantity":2}]}
+2025-09-08 14:11:05 INFO  com.automationframework.tests.ui.ApiUiHybridTest - Create product with boundary price 99.99
+2025-09-08 14:11:06 INFO  com.automationframework.tests.ui.ApiUiHybridTest - Verify API response for product creation
+2025-09-08 14:11:17 INFO  com.automationframework.tests.ui.ApiUiHybridTest - Delete product with ID: 21
+2025-09-08 14:11:17 INFO  com.automationframework.tests.ui.ApiUiHybridTest - Verify deletion was successful
+2025-09-08 14:12:32 INFO  com.automationframework.tests.ui.ApiUiHybridTest - Sending POST request to create product without authorization
+2025-09-08 14:12:32 INFO  com.automationframework.tests.ui.ApiUiHybridTest - Sending POST request to create product without authorization
+2025-09-08 14:12:43 INFO  com.automationframework.tests.ui.ApiUiHybridTest - Updating product ID 21 with Name: Updated Product 1, Price: 49.99
+2025-09-08 14:12:43 INFO  com.automationframework.tests.ui.ApiUiHybridTest - Verifying response status and updated values
+2025-09-08 14:12:49 INFO  com.automationframework.tests.ui.ApiUiHybridTest - Updating product ID 21 with Name: Updated Product 2, Price: 79.99
+2025-09-08 14:12:50 INFO  com.automationframework.tests.ui.ApiUiHybridTest - Verifying response status and updated values
+2025-09-08 14:12:55 INFO  com.automationframework.tests.ui.ApiUiHybridTest - Updating product ID 21 with Name: Updated Product 3, Price: 19.99
+2025-09-08 14:12:55 INFO  com.automationframework.tests.ui.ApiUiHybridTest - Verifying response status and updated values
+2025-09-09 20:05:28 INFO  com.automationframework.tests.CheckoutTest - Logging in as: standard_user
+2025-09-09 20:05:29 INFO  com.automationframework.tests.CheckoutTest - Clicking first product
+2025-09-09 20:05:41 INFO  com.automationframework.tests.CheckoutTest - Adding product to cart
+2025-09-09 20:06:12 INFO  com.automationframework.tests.CheckoutTest - Clicking cart icon and checkout
+2025-09-09 20:06:12 INFO  com.automationframework.pages.CartPage - Clicking on Checkout button
+2025-09-09 20:06:12 INFO  com.automationframework.pages.CheckoutPage - CheckoutPage initialized
+2025-09-09 20:06:12 INFO  com.automationframework.tests.CheckoutTest - Entering checkout info
+2025-09-09 20:06:12 INFO  com.automationframework.pages.CheckoutPage - Entered checkout info: FirstName='Agila', LastName='Ethiraj', PostalCode='12345'
+2025-09-09 20:06:22 INFO  com.automationframework.pages.CheckoutPage - Clicked Continue button and proceeded to next step
+2025-09-09 20:06:22 INFO  com.automationframework.tests.CheckoutTest - Clicking finish
+2025-09-09 20:06:22 INFO  com.automationframework.pages.CheckoutPage - Clicked Finish button to complete checkout
+2025-09-09 20:06:22 INFO  com.automationframework.pages.CheckoutPage - Checkout confirmation message displayed: 'Thank you for your order!'
+2025-09-09 20:06:22 INFO  com.automationframework.tests.CheckoutTest - Checkout completed successfully for: standard_user
+2025-09-09 20:06:27 INFO  com.automationframework.tests.CheckoutTest - Logging in as: performance_glitch_user
+2025-09-09 21:22:50 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:22:50 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:22:50 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:22:50 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:22:50 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:22:50 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:22:50 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:22:50 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:22:50 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:22:50 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:32:50 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:32:50 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:32:50 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:32:50 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:32:50 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:32:52 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:32:54 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:32:56 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:32:58 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:32:59 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:37:00 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:37:00 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:37:02 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:37:02 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:37:04 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:37:04 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:37:06 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:37:06 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:37:07 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:37:07 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:44:21 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:44:22 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:44:23 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:44:24 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:44:25 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:47:13 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:47:13 INFO  com.automationframework.tests.LoginTest - Testing login for user: locked_out_user | Expected: invalid
+2025-09-09 21:47:18 INFO  com.automationframework.tests.LoginTest - Error message displayed: Epic sadface: Sorry, this user has been locked out.
+2025-09-09 21:47:36 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:47:36 INFO  com.automationframework.tests.LoginTest - Testing login for user: wrong_user | Expected: invalid
+2025-09-09 21:47:40 INFO  com.automationframework.tests.LoginTest - Error message displayed: Epic sadface: Username and password do not match any user in this service
+2025-09-09 21:48:00 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:48:00 INFO  com.automationframework.tests.LoginTest - Testing login for user: standard_user | Expected: valid
+2025-09-09 21:48:04 INFO  com.automationframework.tests.LoginTest - Actual page title: Products
+2025-09-09 21:48:24 INFO  com.automationframework.tests.LoginTest - LoginPage initialized
+2025-09-09 21:48:24 INFO  com.automationframework.tests.LoginTest - Testing login for user: performance_glitch_user | Expected: valid
+2025-09-09 21:48:37 INFO  com.automationframework.tests.LoginTest - Actual page title: Products
+2025-09-09 21:48:56 INFO  com.automationframework.tests.LoginTest - LoginPage initialized

@@ -24,10 +24,20 @@ public class ProductPage {
     private By cartBadge = By.className("shopping_cart_badge");
     private By cartIcon = By.id("shopping_cart_container");
     private By cartItemPrices = By.cssSelector(".cart_item .inventory_item_price");
+    private By productsTitleLocator = By.cssSelector("span.title");
     public ProductPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         PageFactory.initElements(driver, this);
+    }
+
+    public boolean isProductPageDisplayed() {
+        try {
+            WebElement title = wait.until(ExpectedConditions.visibilityOfElementLocated(productsTitleLocator));
+            return title.getText().equalsIgnoreCase("Products");
+        } catch (TimeoutException e) {
+            return false;
+        }
     }
     public String getProductTitle() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(productTitle)).getText().trim();

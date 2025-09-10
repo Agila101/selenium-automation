@@ -1,4 +1,5 @@
 package com.automationframework.util;
+import java.util.*;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -60,5 +61,37 @@ public class ExcelUtil {
         return workbook.getSheet(sheetName);
     }
 
+    public List<Map<String, String>> getDataAsListOfMaps(String sheetName) {
+        List<Map<String, String>> sheetData = new ArrayList<>();
+        Sheet sheet = getSheet(sheetName);
+
+        if (sheet == null) {
+            throw new RuntimeException("Sheet not found: " + sheetName);
+        }
+
+        Row headerRow = sheet.getRow(0);
+        if (headerRow == null) {
+            throw new RuntimeException("Header row not found in sheet: " + sheetName);
+        }
+
+        int colCount = headerRow.getLastCellNum();
+        int rowCount = getRowCount(sheetName);
+
+        for (int i = 1; i < rowCount; i++) { // Start from 1 to skip header
+            Row row = sheet.getRow(i);
+            if (row == null) continue;
+
+            Map<String, String> rowMap = new HashMap<>();
+            for (int j = 0; j < colCount; j++) {
+                Cell cell = row.getCell(j);
+                String header = headerRow.getCell(j).getStringCellValue();
+                String value = (cell != null) ? cell.toString() : "";
+                rowMap.put(header, value);
+            }
+            sheetData.add(rowMap);
+        }
+        return sheetData;
+    }
 }
+
 

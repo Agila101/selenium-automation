@@ -1,6 +1,7 @@
 package com.automationframework.tests;
 
 import com.automationframework.base.BaseTest;
+import com.automationframework.base.SaucelabsBaseTest;
 import com.automationframework.pages.LoginPage;
 import com.automationframework.util.ConfigReader;
 import com.automationframework.util.ExcelUtil;

@@ -45,7 +45,7 @@ public class BaseTest {
             System.out.println("Running in CI environment, using headless browser if applicable.");
         }
         driver = DriverFactory.initDriver(browser);
-        String baseUrl = ConfigReader.getProperty("baseUrl");
+        String baseUrl = ConfigReader.getProperty("ui","baseUrl");
         driver.get(baseUrl);
 
 

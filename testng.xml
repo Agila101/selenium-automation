@@ -24,4 +24,11 @@
             <class name="com.automationframework.tests.ProductPageTest"/>
         </classes>
     </test>
+    <test name="APITests">
+        <parameter name="env" value="qa"/>
+        <classes>
+            <class name="com.automationframework.tests.ui.ApiUiHybridTest"/>
+        </classes>
+    </test>
+
 </suite>

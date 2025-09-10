@@ -33,7 +33,7 @@ public class LogoutTest extends BaseTest {
         homePage.logout();
         Assert.assertTrue(loginPage.isLoginButtonDisplayed(), "Not on login page after logout");
 
-        String baseUrl = ConfigReader.getProperty("baseUrl");
+        String baseUrl = ConfigReader.getProperty("ui","baseUrl");
 
         // Try navigating directly to product page
         driver.get(baseUrl + "/inventory.html");
@@ -67,7 +67,7 @@ public class LogoutTest extends BaseTest {
         Assert.assertTrue(loginPage.isLoginButtonDisplayed(), "Login page not displayed after second logout attempt");
 
         // Step 5: Optionally, try accessing a protected page and verify redirect to login
-        driver.get(ConfigReader.getProperty("baseUrl") + "/inventory.html");
+        driver.get(ConfigReader.getProperty("ui","baseurl") + "/inventory.html");
         Assert.assertTrue(loginPage.isLoginButtonDisplayed(), "User was able to access protected page after logout");
     }
 }

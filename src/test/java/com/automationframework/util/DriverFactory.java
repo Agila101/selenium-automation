@@ -75,6 +75,9 @@ public class DriverFactory {
     public static WebDriver getDriver() {
         return driver.get();
     }
+    public static void setDriver(WebDriver webDriver) {
+        driver.set(webDriver);
+    }
 
     public static void quitDriver() {
         if (driver.get() != null) {
