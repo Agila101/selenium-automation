@@ -16,7 +16,7 @@
         </classes>
     </test>
 
-    <!-- Edge on Sauce Labs -->
+    <!-- Edge on Sauce Labs
     <test name="SauceLabsEdge">
         <parameter name="mode" value="saucelabs"/>
         <parameter name="browser" value="edge"/>
@@ -27,5 +27,5 @@
             <class name="com.automationframework.tests.ProductPageTest"/>
         </classes>
     </test>
-
+  -->
 </suite>

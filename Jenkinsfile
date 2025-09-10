@@ -54,5 +54,12 @@ pipeline {
         success {
             echo "Build succeeded!"
         }
+        always {
+                    // Archive TestNG/Surefire test results
+                    junit '**/target/surefire-reports/*.xml'
+
+                    // Archive Allure results for reporting
+                    archiveArtifacts artifacts: 'target/allure-results/**/*', allowEmptyArchive: true
+                }
     }
 }
